@@ -526,7 +526,6 @@
         document.getElementById('modal-order-no').innerText = orderNo;
         document.getElementById('success-modal').style.display = 'flex';
 
-        // Format order details with sizes
         let orderItems = "";
         for (let s in cart.slidesBlack) {
             if (cart.slidesBlack[s] > 0) orderItems += `- ${cart.slidesBlack[s]}x Black Adidas Slides (Size: ${s})\n`;
