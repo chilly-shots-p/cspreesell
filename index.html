@@ -539,7 +539,7 @@
 
         let ownerEmail = "hlalumirankoro@gmail.com";
         let subject = `Proof of Payment - Order ${orderNo}`;
-        let body = `Hi,\n\nI have placed an order (${orderNo}) on the website.\n\nOrder Summary:\n${orderItems}\nTotal Due: ${totalDue}\n\nPlease find my Proof of Payment attached to this email. I have used my Name / Order Number as the bank reference.\n\nCustomer Details:\nName: ${name}\nEmail: ${email}\n\n[PLEASE ATTACH YOUR PAYSHAP / BANK TRANSFER SCREENSHOT HERE BEFORE SENDING]`;
+        let body = `Hi,\n\nI have placed an order (${orderNo}) on the website.\n\nOrder Summary:\n${orderItems}\nTotal Due: ${totalDue}\n\nPlease find my Proof of Payment attached to this email. I have used my Name / Order Number as the bank reference.\n\nCustomer Details:\nName: ${name}\nEmail: ${email}\n\n[PLEASE ATTACH YOUR PAYSHAP / BANK TRANSFER POP or SCREENSHOT]`;
 
         window.location.href = `mailto:${ownerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
@@ -572,7 +572,7 @@
         orderDetails += `*Total Due:* ${totalDue}%0A%0A`;
         orderDetails += `_Please find my Proof of Payment attached below. I have used my Name / Order Number as the bank reference._`;
 
-        let waNumber = "27783801787"; 
+        let waNumber = "27604381536"; 
         let waLink = `https://wa.me/${waNumber}?text=${orderDetails}`;
 
         window.open(waLink, '_blank');
