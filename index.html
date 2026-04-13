@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step Up Your Style - Limited Offer</title>
+    <title>Chilly Shot's Productions - Adidas</title>
     <style>
         :root {
             --primary: #003366;
@@ -17,9 +17,12 @@
             padding: 0;
             background-color: var(--bg);
             color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
-        /* Header & Logo Styles */
+        /* you copied from: csp */
         header {
             background-color: var(--primary);
             color: white;
@@ -58,6 +61,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1; /* Pushes footer to the bottom */
         }
         .section-title {
             text-align: center;
@@ -80,7 +84,6 @@
             background: #fafafa;
         }
         
-        /* Product Image & Size Dropdown Styles */
         .product-img {
             width: 100%;
             height: 150px;
@@ -153,7 +156,6 @@
             font-size: 14px;
         }
         
-        /* Terms & Conditions Checkbox */
         .terms-container {
             margin: 15px 0;
             font-size: 14px;
@@ -173,7 +175,6 @@
             cursor: pointer;
         }
 
-        /* Modal Styles */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -197,6 +198,23 @@
         @media (max-width: 600px) {
             .button-group { flex-direction: column; }
         }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -205,7 +223,7 @@
     <div class="header-content">
         <img src="images/bnw csp.png" alt="Store Logo" class="logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Logo';">
         <div class="header-text">
-            <h1>Limited Offer - Step Up Your Style!</h1>
+            <h1>CHILLY SHOT'S PRODUCTIONS</h1>
             <p>Bonus Deal: Add a premium perfume for just R130 when you purchase the slides!</p>
         </div>
     </div>
@@ -213,7 +231,7 @@
 
 <div class="container">
     
-    <h2 class="section-title">Select Slides</h2>
+    <h2 class="section-title">Adidas Adilette Slides</h2>
     <div class="product-grid">
         
         <div class="card">
@@ -256,7 +274,7 @@
         </div>
     </div>
 
-    <h2 class="section-title">Premium Perfumes</h2>
+    <h2 class="section-title">Adidas Premium Perfumes</h2>
     <p style="text-align:center; font-size: 14px;">(R200 each if bought alone, or R130 each when paired with slides)</p>
     
     <div class="product-grid" id="perfume-grid">
@@ -349,6 +367,11 @@
     </div>
 </div>
 
+<footer>
+    <p>&copy; 2026 Chilly Shot's Productions. All Rights Reserved.</p>
+    <p><strong>Please note:</strong> Our products are sourced and stocked from official retailers such as <a href="https://www.adidas.co.za" target="_blank">Adidas</a> and <a href="https://superbalist.com" target="_blank">Superbalist</a>.</p>
+</footer>
+
 <div id="terms-modal" class="modal-overlay">
     <div class="modal-content">
         <h2 style="color: var(--primary); text-align: center;">Terms & Conditions</h2>
@@ -356,6 +379,7 @@
         <ul>
             <li><strong>Stock & Processing:</strong> Products are not kept in stock. Orders are strictly processed only once a <strong>100% deposit</strong> is received and cleared.</li>
             <li><strong>Refund Policy:</strong> Strictly <strong>no refunds</strong> will be issued after an order has begun processing.</li>
+            <li><strong>Refund Policy:</strong> If desired quality not met, return Applicable <strong>7.1%</strong> will deducted on Total (excluding delivery fee)</li>
             <li><strong>Delivery Fees:</strong> Free delivery applies only if a premium perfume AND slides are purchased together. Otherwise, delivery is R35 for slides individually, and R65 for perfumes individually.</li>
             <li><strong>Delivery Timeline:</strong> Delivery takes up to <strong>7 business days</strong>. This excludes weekends and public holidays.</li>
             <li><strong>Payment & Reference:</strong> Payments must be made via PayShap or Immediate Bank Transfer. Proof of payment must be sent immediately upon checkout. <strong>Your payment reference must be your Full Name or your Order Number.</strong></li>
@@ -378,7 +402,6 @@
 <script>
     const perfumes = ["Dynamic Pulse", "Ice Dive", "Goal", "Victory League", "Star"];
     
-    // Complex Cart tracking specific sizes for the slides
     let cart = { 
         slidesBlack: { "UK3": 0, "UK4": 0 }, 
         slidesNavy: { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 }, 
@@ -391,7 +414,6 @@
             let size = document.getElementById('size-slidesBlack').value;
             cart.slidesBlack[size] = Math.max(0, cart.slidesBlack[size] + change);
             
-            // Update the quantity display
             let total = 0;
             let details = [];
             for (let s in cart.slidesBlack) {
@@ -405,7 +427,6 @@
             let size = document.getElementById('size-slidesNavy').value;
             cart.slidesNavy[size] = Math.max(0, cart.slidesNavy[size] + change);
             
-            // Update the quantity display
             let total = 0;
             let details = [];
             for (let s in cart.slidesNavy) {
@@ -423,7 +444,7 @@
     }
 
     function calculateTotals() {
-        // Sum up all sizes
+        // cyberd'vill
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
         let slideQtyNavy = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
         let slideQty = slideQtyBlack + slideQtyNavy;
@@ -487,7 +508,6 @@
         return true;
     }
 
-    // EMAIL ORDER FUNCTION
     function placeOrderEmail() {
         if (!checkCartAndName()) return;
         
@@ -524,7 +544,7 @@
         window.location.href = `mailto:${ownerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
-    // WHATSAPP ORDER FUNCTION
+    // cyberd'vill
     function placeOrderWhatsApp() {
         if (!checkCartAndName()) return;
 
@@ -536,7 +556,7 @@
         orderDetails += `*Name:* ${name}%0A%0A`;
         orderDetails += `*Order Summary:*%0A`;
         
-        // Format order details with sizes for WhatsApp
+        // csp
         for (let s in cart.slidesBlack) {
             if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Black Adidas Slides (Size: ${s})%0A`;
         }
@@ -565,7 +585,7 @@
     function closeModal() {
         document.getElementById('success-modal').style.display = 'none';
         
-        // Reset everything
+        // chillyshotsproductions
         cart.slidesBlack = { "UK3": 0, "UK4": 0 };
         cart.slidesNavy = { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 };
         perfumes.forEach(p => cart.perfumes[p] = 0);
