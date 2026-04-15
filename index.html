@@ -22,7 +22,6 @@
             min-height: 100vh;
         }
         
-        /* you copied from: csp */
         header {
             background-color: var(--primary);
             color: white;
@@ -61,7 +60,7 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            flex: 1; /* Pushes footer to the bottom */
+            flex: 1; 
         }
         .section-title {
             text-align: center;
@@ -69,6 +68,7 @@
             border-bottom: 2px solid var(--secondary);
             padding-bottom: 10px;
             margin-bottom: 20px;
+            margin-top: 30px;
         }
         .product-grid {
             display: grid;
@@ -223,15 +223,16 @@
     <div class="header-content">
         <img src="images/bnw csp.png" alt="Store Logo" class="logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Logo';">
         <div class="header-text">
-            <h1>CHILLY SHOT'S PRODUCTIONS</h1>
-            <p>Bonus Deal: Add a premium perfume for just R130 when you purchase the slides!</p>
+            <h1>CHILLY SHOT'S PRODUCTION</h1>
+            <p>Bonus Deals Available: Add a premium perfume for a fraction of the cost!</p>
         </div>
     </div>
 </header>
 
 <div class="container">
     
-    <h2 class="section-title">Adidas Adilette Slides</h2>
+    <h2 class="section-title">Adidas Adilette Slides (R700)</h2>
+    <p style="text-align:center; font-size: 14px;">(Perfume Special: 50ml for R130 each when paired with these slides)</p>
     <div class="product-grid">
         
         <div class="card">
@@ -240,8 +241,8 @@
             <p>R700.00</p>
             
             <select id="size-slidesBlack" class="size-select">
-                <option value="UK3">Size: UK3</option>
-                <option value="UK4">Size: UK4</option>
+                <option value="UK5">Size: UK5</option>
+                <option value="UK8">Size: UK8</option>
             </select>
 
             <p>Total Quantity: <span id="qty-slidesBlack">0</span></p>
@@ -253,7 +254,7 @@
         
         <div class="card">
             <img src="images/Navy.jpeg" alt="Navy Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Adidas Adilette Slides (Navy)</h3>
+            <h3>Adidas Adilette Slides (Blue)</h3>
             <p>R700.00</p>
 
             <select id="size-slidesNavy" class="size-select">
@@ -274,54 +275,166 @@
         </div>
     </div>
 
+
+    <h2 class="section-title">New Adilette Range (R660)</h2>
+    <p style="text-align:center; font-size: 14px; color: #cc0000; font-weight: bold;">(Perfume Special: 100ml for R170 | Pair with ANY perfume for Free Delivery!)</p>
+    <div class="product-grid">
+        
+        <div class="card">
+            <img src="images/lite-navy-white.jpeg" alt="Adilette lite - navy/white" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adilette Lite - Navy/White</h3>
+            <p>R660.00</p>
+            
+            <select id="size-newSlideNavyWhite" class="size-select">
+                <option value="UK4">Size: UK4</option>
+                <option value="UK5">Size: UK5</option>
+                <option value="UK6">Size: UK6</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-newSlideNavyWhite">0</span></p>
+            <div id="details-newSlideNavyWhite" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('newSlideNavyWhite', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('newSlideNavyWhite', -1)">Remove Selected Size</button>
+        </div>
+
+        <div class="card">
+            <img src="images/shower-black.jpeg" alt="Adilette Shower - Black" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adilette Shower - Black</h3>
+            <p>R660.00</p>
+            
+            <select id="size-newSlideShowerBlack" class="size-select">
+                <option value="UK6">Size: UK6</option>
+                <option value="UK7">Size: UK7</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-newSlideShowerBlack">0</span></p>
+            <div id="details-newSlideShowerBlack" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('newSlideShowerBlack', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('newSlideShowerBlack', -1)">Remove Selected Size</button>
+        </div>
+
+        <div class="card">
+            <img src="images/lite-grey.jpeg" alt="Adilette lite - Grey" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adilette Lite - Grey</h3>
+            <p>R660.00</p>
+            
+            <select id="size-newSlideGrey" class="size-select">
+                <option value="UK5">Size: UK5</option>
+                <option value="UK6">Size: UK6</option>
+                <option value="UK7">Size: UK7</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK11">Size: UK11</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-newSlideGrey">0</span></p>
+            <div id="details-newSlideGrey" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('newSlideGrey', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('newSlideGrey', -1)">Remove Selected Size</button>
+        </div>
+
+        <div class="card">
+            <img src="images/lite-white-black.jpeg" alt="Adilette lite - ftwr white/core black" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adilette Lite - White/Black</h3>
+            <p>R660.00</p>
+            
+            <select id="size-newSlideWhiteBlack" class="size-select">
+                <option value="UK3">Size: UK3</option>
+                <option value="UK4">Size: UK4</option>
+                <option value="UK5">Size: UK5</option>
+                <option value="UK6">Size: UK6</option>
+                <option value="UK7">Size: UK7</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
+                <option value="UK11">Size: UK11</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-newSlideWhiteBlack">0</span></p>
+            <div id="details-newSlideWhiteBlack" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('newSlideWhiteBlack', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('newSlideWhiteBlack', -1)">Remove Selected Size</button>
+        </div>
+
+    </div>
+
+
     <h2 class="section-title">Adidas Premium Perfumes</h2>
-    <p style="text-align:center; font-size: 14px;">(R200 each if bought alone, or R130 each when paired with slides)</p>
+    <p style="text-align:center; font-size: 14px;">Please see pairing specials above for discounted rates!</p>
     
     <div class="product-grid" id="perfume-grid">
         
         <div class="card">
             <img src="images/Dynamic Pulse.jpeg" alt="Dynamic Pulse" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Dynamic Pulse</h3>
-            <p>50ml Eau De Toilette</p>
-            <p>Quantity: <span id="qty-DynamicPulse">0</span></p>
+            <h3>Dynamic Pulse (50ml)</h3>
+            <p>R200.00 alone</p>
+            <p>Quantity: <span id="qty-DynamicPulse50">0</span></p>
             <button class="btn" onclick="updateItem('Dynamic Pulse', 1)">Add</button>
             <button class="btn btn-remove" onclick="updateItem('Dynamic Pulse', -1)">Remove</button>
         </div>
 
         <div class="card">
             <img src="images/Ice Dive.jpeg" alt="Ice Dive" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Ice Dive</h3>
-            <p>50ml Eau De Toilette</p>
-            <p>Quantity: <span id="qty-IceDive">0</span></p>
+            <h3>Ice Dive (50ml)</h3>
+            <p>R200.00 alone</p>
+            <p>Quantity: <span id="qty-IceDive50">0</span></p>
             <button class="btn" onclick="updateItem('Ice Dive', 1)">Add</button>
             <button class="btn btn-remove" onclick="updateItem('Ice Dive', -1)">Remove</button>
         </div>
 
         <div class="card">
             <img src="images/Goal.jpeg" alt="Goal" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Goal</h3>
-            <p>50ml Eau De Toilette</p>
-            <p>Quantity: <span id="qty-Goal">0</span></p>
+            <h3>Goal (50ml)</h3>
+            <p>R200.00 alone</p>
+            <p>Quantity: <span id="qty-Goal50">0</span></p>
             <button class="btn" onclick="updateItem('Goal', 1)">Add</button>
             <button class="btn btn-remove" onclick="updateItem('Goal', -1)">Remove</button>
         </div>
 
         <div class="card">
             <img src="images/Victory League.jpeg" alt="Victory League" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Victory League</h3>
-            <p>50ml Eau De Toilette</p>
-            <p>Quantity: <span id="qty-VictoryLeague">0</span></p>
+            <h3>Victory League (50ml)</h3>
+            <p>R200.00 alone</p>
+            <p>Quantity: <span id="qty-VictoryLeague50">0</span></p>
             <button class="btn" onclick="updateItem('Victory League', 1)">Add</button>
             <button class="btn btn-remove" onclick="updateItem('Victory League', -1)">Remove</button>
         </div>
 
         <div class="card">
             <img src="images/Star.jpeg" alt="Star" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Star</h3>
-            <p>50ml Eau De Toilette</p>
-            <p>Quantity: <span id="qty-Star">0</span></p>
+            <h3>Star (50ml)</h3>
+            <p>R200.00 alone</p>
+            <p>Quantity: <span id="qty-Star50">0</span></p>
             <button class="btn" onclick="updateItem('Star', 1)">Add</button>
             <button class="btn btn-remove" onclick="updateItem('Star', -1)">Remove</button>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--secondary);">
+            <img src="images/Ice Dive.jpeg" alt="Ice Dive 100ml" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Ice Dive (100ml)</h3>
+            <p>R300.00 alone</p>
+            <p>Quantity: <span id="qty-IceDive100">0</span></p>
+            <button class="btn" style="background: var(--secondary); color: #333;" onclick="updateItem('Ice Dive 100', 1)">Add Large</button>
+            <button class="btn btn-remove" onclick="updateItem('Ice Dive 100', -1)">Remove</button>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--secondary);">
+            <img src="images/Goal.jpeg" alt="Goal 100ml" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Goal (100ml)</h3>
+            <p>R300.00 alone</p>
+            <p>Quantity: <span id="qty-Goal100">0</span></p>
+            <button class="btn" style="background: var(--secondary); color: #333;" onclick="updateItem('Goal 100', 1)">Add Large</button>
+            <button class="btn btn-remove" onclick="updateItem('Goal 100', -1)">Remove</button>
         </div>
 
     </div>
@@ -370,7 +483,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Chilly Shot's Productions. All Rights Reserved.</p>
+    <p>&copy; 2026 Chilly Shot's Production. All Rights Reserved.</p>
     <p><strong>Please note:</strong> Our products are sourced and stocked from official retailers such as <a href="https://www.adidas.co.za" target="_blank">Adidas</a> and <a href="https://superbalist.com" target="_blank">Superbalist</a>.</p>
 </footer>
 
@@ -381,8 +494,11 @@
         <ul>
             <li><strong>Stock & Processing:</strong> Products are not kept in stock. Orders are strictly processed only once a <strong>100% deposit</strong> is received and cleared.</li>
             <li><strong>Refund Policy:</strong> Strictly <strong>no refunds</strong> will be issued after an order has begun processing.</li>
-            <li><strong>Refund Policy:</strong> If desired quality not met, return Applicable <strong>7.1%</strong> will deducted on Total (excluding delivery fee)</li>
-            <li><strong>Delivery Fees:</strong> Free delivery applies only if a premium perfume AND slides are purchased together. Otherwise, delivery is R35 for slides individually, and R65 for perfumes individually.</li>
+            <li><strong>Quality Policy:</strong> If desired quality is not met, return applies. <strong>7.1%</strong> will be deducted on Total (excluding delivery fee).</li>
+            <li><strong>Delivery Fees:</strong> 
+                <br>- Free delivery applies if ANY slides (R700 or R660) are paired with ANY perfume (50ml or 100ml). 
+                <br>- Delivery is R35 for slides alone, and R65 for perfumes alone.
+            </li>
             <li><strong>Delivery Timeline:</strong> Delivery takes up to <strong>7 business days</strong>. This excludes weekends and public holidays.</li>
             <li><strong>Payment & Reference:</strong> Payments must be made via PayShap or Immediate Bank Transfer. Proof of payment must be sent immediately upon checkout. <strong>Your payment reference must be your Full Name or your Order Number.</strong></li>
         </ul>
@@ -402,70 +518,92 @@
 </div>
 
 <script>
-    const perfumes = ["Dynamic Pulse", "Ice Dive", "Goal", "Victory League", "Star"];
-    
     let cart = { 
-        slidesBlack: { "UK3": 0, "UK4": 0 }, 
+        slidesBlack: { "UK5": 0, "UK8": 0 }, 
         slidesNavy: { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 }, 
-        perfumes: {} 
+        newSlideNavyWhite: { "UK4": 0, "UK5": 0, "UK6": 0, "UK8": 0, "UK9": 0, "UK10": 0 },
+        newSlideShowerBlack: { "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 },
+        newSlideGrey: { "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0 },
+        newSlideWhiteBlack: { "UK3": 0, "UK4": 0, "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0 },
+        perfumes50: { "Dynamic Pulse": 0, "Ice Dive": 0, "Goal": 0, "Victory League": 0, "Star": 0 },
+        perfumes100: { "Ice Dive": 0, "Goal": 0 }
     };
-    perfumes.forEach(p => cart.perfumes[p] = 0);
 
     function updateItem(item, change) {
-        if (item === 'slidesBlack') {
-            let size = document.getElementById('size-slidesBlack').value;
-            cart.slidesBlack[size] = Math.max(0, cart.slidesBlack[size] + change);
+        if (['slidesBlack', 'slidesNavy', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'].includes(item)) {
+            let size = document.getElementById(`size-${item}`).value;
+            cart[item][size] = Math.max(0, cart[item][size] + change);
             
             let total = 0;
             let details = [];
-            for (let s in cart.slidesBlack) {
-                total += cart.slidesBlack[s];
-                if (cart.slidesBlack[s] > 0) details.push(`${cart.slidesBlack[s]}x ${s}`);
+            for (let s in cart[item]) {
+                total += cart[item][s];
+                if (cart[item][s] > 0) details.push(`${cart[item][s]}x ${s}`);
             }
-            document.getElementById('qty-slidesBlack').innerText = total;
-            document.getElementById('details-slidesBlack').innerText = details.length > 0 ? "(" + details.join(', ') + ")" : "";
-
-        } else if (item === 'slidesNavy') {
-            let size = document.getElementById('size-slidesNavy').value;
-            cart.slidesNavy[size] = Math.max(0, cart.slidesNavy[size] + change);
+            document.getElementById(`qty-${item}`).innerText = total;
+            document.getElementById(`details-${item}`).innerText = details.length > 0 ? "(" + details.join(', ') + ")" : "";
             
-            let total = 0;
-            let details = [];
-            for (let s in cart.slidesNavy) {
-                total += cart.slidesNavy[s];
-                if (cart.slidesNavy[s] > 0) details.push(`${cart.slidesNavy[s]}x ${s}`);
-            }
-            document.getElementById('qty-slidesNavy').innerText = total;
-            document.getElementById('details-slidesNavy').innerText = details.length > 0 ? "(" + details.join(', ') + ")" : "";
-
-        } else {
-            cart.perfumes[item] = Math.max(0, cart.perfumes[item] + change);
-            document.getElementById(`qty-${item.replace(/\s/g, '')}`).innerText = cart.perfumes[item];
+        } else if (['Dynamic Pulse', 'Ice Dive', 'Goal', 'Victory League', 'Star'].includes(item)) {
+            cart.perfumes50[item] = Math.max(0, cart.perfumes50[item] + change);
+            document.getElementById(`qty-${item.replace(/\s/g, '')}50`).innerText = cart.perfumes50[item];
+            
+        } else if (['Ice Dive 100', 'Goal 100'].includes(item)) {
+            let name = item.replace(' 100', '');
+            cart.perfumes100[name] = Math.max(0, cart.perfumes100[name] + change);
+            document.getElementById(`qty-${name.replace(/\s/g, '')}100`).innerText = cart.perfumes100[name];
         }
         calculateTotals();
     }
 
     function calculateTotals() {
-        // cyberd'vill
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
         let slideQtyNavy = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
-        let slideQty = slideQtyBlack + slideQtyNavy;
+        let slideQtyOld = slideQtyBlack + slideQtyNavy;
         
-        let slideTotal = slideQty * 700; 
+        // Cyberd'vill
+        let slideQtyNW = Object.values(cart.newSlideNavyWhite).reduce((a, b) => a + b, 0);
+        let slideQtySB = Object.values(cart.newSlideShowerBlack).reduce((a, b) => a + b, 0);
+        let slideQtyG = Object.values(cart.newSlideGrey).reduce((a, b) => a + b, 0);
+        let slideQtyWB = Object.values(cart.newSlideWhiteBlack).reduce((a, b) => a + b, 0);
+        let slideQtyNew = slideQtyNW + slideQtySB + slideQtyG + slideQtyWB;
 
-        let perfumeQty = 0;
-        for (let p in cart.perfumes) { perfumeQty += cart.perfumes[p]; }
+        let totalSlideQty = slideQtyOld + slideQtyNew;
+        let slideTotal = (slideQtyOld * 700) + (slideQtyNew * 660); 
 
-        let promoPerfumes = Math.min(slideQty, perfumeQty); 
-        let regularPerfumes = perfumeQty - promoPerfumes;
-        let perfumeTotal = (promoPerfumes * 130) + (regularPerfumes * 200);
+        let perfume50Qty = Object.values(cart.perfumes50).reduce((a, b) => a + b, 0);
+        let perfume100Qty = Object.values(cart.perfumes100).reduce((a, b) => a + b, 0);
+        let totalPerfumeQty = perfume50Qty + perfume100Qty;
+
+        let slidesOldLeft = slideQtyOld;
+        let slidesNewLeft = slideQtyNew;
+        let perf50Left = perfume50Qty;
+        let perf100Left = perfume100Qty;
+
+        // cyberd'vil
+        let promo130Qty = Math.min(slidesOldLeft, perf50Left);
+        slidesOldLeft -= promo130Qty;
+        perf50Left -= promo130Qty;
+
+        let promo170Qty = Math.min(slidesNewLeft, perf100Left);
+        slidesNewLeft -= promo170Qty;
+        perf100Left -= promo170Qty;
+
+        let regular200Qty = perf50Left;
+        let regular300Qty = perf100Left;
+
+        let perfumeTotal = (promo130Qty * 130) + (promo170Qty * 170) + (regular200Qty * 200) + (regular300Qty * 300);
 
         let subtotal = slideTotal + perfumeTotal;
 
         let delivery = 0;
-        if (slideQty > 0 && perfumeQty === 0) delivery = 35;       
-        else if (slideQty === 0 && perfumeQty > 0) delivery = 65;  
-        else if (slideQty > 0 && perfumeQty > 0) delivery = 0;     
+        
+        if (totalSlideQty > 0 && totalPerfumeQty === 0) {
+            delivery = 35; // csp
+        } else if (totalSlideQty === 0 && totalPerfumeQty > 0) {
+            delivery = 65; 
+        } else if (totalSlideQty > 0 && totalPerfumeQty > 0) {
+            delivery = 0; // chilly shuot's production code
+        }
 
         let total = subtotal + delivery;
 
@@ -491,9 +629,15 @@
         
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
         let slideQtyNavy = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
-        let totalItems = slideQtyBlack + slideQtyNavy;
-        
-        for(let p in cart.perfumes) totalItems += cart.perfumes[p];
+        let slideQtyNW = Object.values(cart.newSlideNavyWhite).reduce((a, b) => a + b, 0);
+        let slideQtySB = Object.values(cart.newSlideShowerBlack).reduce((a, b) => a + b, 0);
+        let slideQtyG = Object.values(cart.newSlideGrey).reduce((a, b) => a + b, 0);
+        let slideQtyWB = Object.values(cart.newSlideWhiteBlack).reduce((a, b) => a + b, 0);
+
+        let perfume50Qty = Object.values(cart.perfumes50).reduce((a, b) => a + b, 0);
+        let perfume100Qty = Object.values(cart.perfumes100).reduce((a, b) => a + b, 0);
+
+        let totalItems = slideQtyBlack + slideQtyNavy + slideQtyNW + slideQtySB + slideQtyG + slideQtyWB + perfume50Qty + perfume100Qty;
 
         if (totalItems === 0) {
             alert("Your cart is empty!");
@@ -523,20 +667,19 @@
         }
 
         let orderNo = generateOrderNumber();
-        
         document.getElementById('modal-order-no').innerText = orderNo;
         document.getElementById('success-modal').style.display = 'flex';
 
         let orderItems = "";
-        for (let s in cart.slidesBlack) {
-            if (cart.slidesBlack[s] > 0) orderItems += `- ${cart.slidesBlack[s]}x Black Adidas Slides (Size: ${s})\n`;
-        }
-        for (let s in cart.slidesNavy) {
-            if (cart.slidesNavy[s] > 0) orderItems += `- ${cart.slidesNavy[s]}x Navy Adidas Slides (Size: ${s})\n`;
-        }
-        for (let p in cart.perfumes) {
-            if (cart.perfumes[p] > 0) orderItems += `- ${cart.perfumes[p]}x ${p} Perfume\n`;
-        }
+        for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderItems += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})\n`; }
+        for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderItems += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})\n`; }
+        for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderItems += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})\n`; }
+        for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderItems += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})\n`; }
+        for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderItems += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})\n`; }
+        for (let s in cart.newSlideWhiteBlack) { if (cart.newSlideWhiteBlack[s] > 0) orderItems += `- ${cart.newSlideWhiteBlack[s]}x Adilette lite - ftwr white/core black (Size: ${s})\n`; }
+
+        for (let p in cart.perfumes50) { if (cart.perfumes50[p] > 0) orderItems += `- ${cart.perfumes50[p]}x ${p} Perfume (50ml)\n`; }
+        for (let p in cart.perfumes100) { if (cart.perfumes100[p] > 0) orderItems += `- ${cart.perfumes100[p]}x ${p} Perfume (100ml)\n`; }
 
         let ownerEmail = "hlalumirankoro@gmail.com";
         let subject = `Proof of Payment - Order ${orderNo}`;
@@ -545,7 +688,6 @@
         window.location.href = `mailto:${ownerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
-    // cyberd'vill
     function placeOrderWhatsApp() {
         if (!checkCartAndName()) return;
 
@@ -557,16 +699,15 @@
         orderDetails += `*Name:* ${name}%0A%0A`;
         orderDetails += `*Order Summary:*%0A`;
         
-        // csp
-        for (let s in cart.slidesBlack) {
-            if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Black Adidas Slides (Size: ${s})%0A`;
-        }
-        for (let s in cart.slidesNavy) {
-            if (cart.slidesNavy[s] > 0) orderDetails += `- ${cart.slidesNavy[s]}x Navy Adidas Slides (Size: ${s})%0A`;
-        }
-        for (let p in cart.perfumes) {
-            if (cart.perfumes[p] > 0) orderDetails += `- ${cart.perfumes[p]}x ${p} Perfume%0A`;
-        }
+        for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})%0A`; }
+        for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderDetails += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})%0A`; }
+        for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderDetails += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})%0A`; }
+        for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderDetails += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})%0A`; }
+        for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderDetails += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})%0A`; }
+        for (let s in cart.newSlideWhiteBlack) { if (cart.newSlideWhiteBlack[s] > 0) orderDetails += `- ${cart.newSlideWhiteBlack[s]}x Adilette lite - ftwr white/core black (Size: ${s})%0A`; }
+
+        for (let p in cart.perfumes50) { if (cart.perfumes50[p] > 0) orderDetails += `- ${cart.perfumes50[p]}x ${p} Perfume (50ml)%0A`; }
+        for (let p in cart.perfumes100) { if (cart.perfumes100[p] > 0) orderDetails += `- ${cart.perfumes100[p]}x ${p} Perfume (100ml)%0A`; }
         
         let deliveryFee = document.getElementById('delivery').innerText;
         orderDetails += `%0A*Delivery Fee:* ${deliveryFee}%0A`;
@@ -586,15 +727,21 @@
     function closeModal() {
         document.getElementById('success-modal').style.display = 'none';
         
-        // chillyshotsproductions
-        cart.slidesBlack = { "UK3": 0, "UK4": 0 };
+        cart.slidesBlack = { "UK5": 0, "UK8": 0 };
         cart.slidesNavy = { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 };
-        perfumes.forEach(p => cart.perfumes[p] = 0);
+        cart.newSlideNavyWhite = { "UK4": 0, "UK5": 0, "UK6": 0, "UK8": 0, "UK9": 0, "UK10": 0 };
+        cart.newSlideShowerBlack = { "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 };
+        cart.newSlideGrey = { "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0 };
+        cart.newSlideWhiteBlack = { "UK3": 0, "UK4": 0, "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0 };
+
+        cart.perfumes50 = { "Dynamic Pulse": 0, "Ice Dive": 0, "Goal": 0, "Victory League": 0, "Star": 0 };
+        cart.perfumes100 = { "Ice Dive": 0, "Goal": 0 };
         
-        document.getElementById('qty-slidesBlack').innerText = "0";
-        document.getElementById('details-slidesBlack').innerText = "";
-        document.getElementById('qty-slidesNavy').innerText = "0";
-        document.getElementById('details-slidesNavy').innerText = "";
+        let itemIDs = ['slidesBlack', 'slidesNavy', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'];
+        itemIDs.forEach(id => {
+            document.getElementById(`qty-${id}`).innerText = "0";
+            document.getElementById(`details-${id}`).innerText = "";
+        });
         
         document.querySelectorAll('span[id^="qty-Dynamic"], span[id^="qty-Ice"], span[id^="qty-Goal"], span[id^="qty-Victory"], span[id^="qty-Star"]').forEach(el => el.innerText = "0");
         
