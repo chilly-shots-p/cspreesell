@@ -254,7 +254,7 @@
         
         <div class="card">
             <img src="images/Blue.jpeg" alt="Blue Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Adidas Adilette Slides (Navy)</h3>
+            <h3>Adidas Adilette Slides (Blue)</h3>
             <p>R700.00</p>
 
             <select id="size-slidesBlue" class="size-select">
@@ -277,7 +277,7 @@
 
         <div class="card">
             <img src="images/Navy.jpeg" alt="Navy Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
-            <h3>Adidas Adilette Slides (Blue)</h3>
+            <h3>Adidas Adilette Slides (Navy)</h3>
             <p>R700.00</p>
 
             <select id="size-slidesNavy" class="size-select">
@@ -604,14 +604,12 @@
     }
 
     function calculateTotals() {
-        // Calculate Qty for Old Slides (R700)
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
         let slideQtyBlue = Object.values(cart.slidesBlue).reduce((a, b) => a + b, 0);
         let slideQtyNavyR700 = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
         let slideQtyWB700 = Object.values(cart.slidesWhiteBlack700).reduce((a, b) => a + b, 0);
         let slideQtyOld = slideQtyBlack + slideQtyBlue + slideQtyNavyR700 + slideQtyWB700;
         
-        // Calculate Qty for New Slides (R660)
         let slideQtyNW = Object.values(cart.newSlideNavyWhite).reduce((a, b) => a + b, 0);
         let slideQtySB = Object.values(cart.newSlideShowerBlack).reduce((a, b) => a + b, 0);
         let slideQtyG = Object.values(cart.newSlideGrey).reduce((a, b) => a + b, 0);
@@ -630,7 +628,6 @@
         let perf50Left = perfume50Qty;
         let perf100Left = perfume100Qty;
 
-        // Promo logic
         let promo130Qty = Math.min(slidesOldLeft, perf50Left);
         slidesOldLeft -= promo130Qty;
         perf50Left -= promo130Qty;
@@ -752,30 +749,33 @@
         let totalDue = document.getElementById('total').innerText;
         let orderNo = generateOrderNumber();
 
-        let orderDetails = `*New Order: ${orderNo}*%0A`;
-        orderDetails += `*Name:* ${name}%0A%0A`;
-        orderDetails += `*Order Summary:*%0A`;
+        // chillyshots-p
+        let orderDetails = `*New Order: ${orderNo}*\n`;
+        orderDetails += `*Name:* ${name}\n\n`;
+        orderDetails += `*Order Summary:*\n`;
         
-        for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})%0A`; }
-        for (let s in cart.slidesBlue) { if (cart.slidesBlue[s] > 0) orderDetails += `- ${cart.slidesBlue[s]}x Adidas Adilette Slides (Blue) (Size: ${s})%0A`; }
-        for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderDetails += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})%0A`; }
-        for (let s in cart.slidesWhiteBlack700) { if (cart.slidesWhiteBlack700[s] > 0) orderDetails += `- ${cart.slidesWhiteBlack700[s]}x Adidas Adilette Slides (White & Core Black) (Size: ${s})%0A`; }
+        for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})\n`; }
+        for (let s in cart.slidesBlue) { if (cart.slidesBlue[s] > 0) orderDetails += `- ${cart.slidesBlue[s]}x Adidas Adilette Slides (Blue) (Size: ${s})\n`; }
+        for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderDetails += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})\n`; }
+        for (let s in cart.slidesWhiteBlack700) { if (cart.slidesWhiteBlack700[s] > 0) orderDetails += `- ${cart.slidesWhiteBlack700[s]}x Adidas Adilette Slides (White & Core Black) (Size: ${s})\n`; }
 
-        for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderDetails += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})%0A`; }
-        for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderDetails += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})%0A`; }
-        for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderDetails += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})%0A`; }
-        for (let s in cart.newSlideWhiteBlack) { if (cart.newSlideWhiteBlack[s] > 0) orderDetails += `- ${cart.newSlideWhiteBlack[s]}x Adilette lite - ftwr white/core black (Size: ${s})%0A`; }
+        for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderDetails += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})\n`; }
+        for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderDetails += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})\n`; }
+        for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderDetails += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})\n`; }
+        for (let s in cart.newSlideWhiteBlack) { if (cart.newSlideWhiteBlack[s] > 0) orderDetails += `- ${cart.newSlideWhiteBlack[s]}x Adilette lite - ftwr white/core black (Size: ${s})\n`; }
 
-        for (let p in cart.perfumes50) { if (cart.perfumes50[p] > 0) orderDetails += `- ${cart.perfumes50[p]}x ${p} Perfume (50ml)%0A`; }
-        for (let p in cart.perfumes100) { if (cart.perfumes100[p] > 0) orderDetails += `- ${cart.perfumes100[p]}x ${p} Perfume (100ml)%0A`; }
+        for (let p in cart.perfumes50) { if (cart.perfumes50[p] > 0) orderDetails += `- ${cart.perfumes50[p]}x ${p} Perfume (50ml)\n`; }
+        for (let p in cart.perfumes100) { if (cart.perfumes100[p] > 0) orderDetails += `- ${cart.perfumes100[p]}x ${p} Perfume (100ml)\n`; }
         
         let deliveryFee = document.getElementById('delivery').innerText;
-        orderDetails += `%0A*Delivery Fee:* ${deliveryFee}%0A`;
-        orderDetails += `*Total Due:* ${totalDue}%0A%0A`;
+        orderDetails += `\n*Delivery Fee:* ${deliveryFee}\n`;
+        orderDetails += `*Total Due:* ${totalDue}\n\n`;
         orderDetails += `_Please find my Proof of Payment attached below. I have used my Name / Order Number as the bank reference._`;
 
         let waNumber = "27604381536"; 
-        let waLink = `https://wa.me/${waNumber}?text=${orderDetails}`;
+        
+        // cyberd'vil
+        let waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(orderDetails)}`;
 
         window.open(waLink, '_blank');
         
