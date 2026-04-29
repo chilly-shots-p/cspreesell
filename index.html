@@ -223,7 +223,7 @@
     <div class="header-content">
         <img src="images/bnw csp.png" alt="Store Logo" class="logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=Logo';">
         <div class="header-text">
-            <h1>CHILLY SHOT'S PRODUCTION</h1>
+            <h1>CHILLY SHOT'S PRODUCTIONS</h1>
             <p>Bonus Deals Available: Add a premium perfume for a fraction of the cost!</p>
         </div>
     </div>
@@ -235,12 +235,12 @@
     <p style="text-align:center; font-size: 14px;">(Perfume Special: 50ml for R130 each when paired with these slides)</p>
     <div class="product-grid">
         
-        <div class="card">
+        <div class="card" style="opacity: 0.6;">
             <img src="images/Black.jpeg" alt="Black Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
             <h3>Adidas Adilette Slides (Black)</h3>
-            <p>R700.00</p>
+            <p style="color: #cc0000; font-weight: bold;">SOLD OUT</p>
             
-            <select id="size-slidesBlack" class="size-select">
+            <select id="size-slidesBlack" class="size-select" disabled>
                 <option value="UK5">Size: UK5</option>
                 <option value="UK8">Size: UK8</option>
             </select>
@@ -248,10 +248,33 @@
             <p>Total Quantity: <span id="qty-slidesBlack">0</span></p>
             <div id="details-slidesBlack" class="size-details"></div>
 
-            <button class="btn" onclick="updateItem('slidesBlack', 1)">Add Selected Size</button>
-            <button class="btn btn-remove" onclick="updateItem('slidesBlack', -1)">Remove Selected Size</button>
+            <button class="btn" disabled style="background:#ccc; cursor:not-allowed;">Add Selected Size</button>
+            <button class="btn btn-remove" disabled style="background:#ccc; cursor:not-allowed;">Remove Selected Size</button>
         </div>
         
+        <div class="card">
+            <img src="images/Blue.jpeg" alt="Blue Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adidas Adilette Slides (Navy)</h3>
+            <p>R700.00</p>
+
+            <select id="size-slidesBlue" class="size-select">
+                <option value="UK3">Size: UK3</option>
+                <option value="UK6">Size: UK6</option>
+                <option value="UK7">Size: UK7</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
+                <option value="UK11">Size: UK11</option>
+                <option value="UK12">Size: UK12</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-slidesBlue">0</span></p>
+            <div id="details-slidesBlue" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('slidesBlue', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('slidesBlue', -1)">Remove Selected Size</button>
+        </div>
+
         <div class="card">
             <img src="images/Navy.jpeg" alt="Navy Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
             <h3>Adidas Adilette Slides (Blue)</h3>
@@ -259,12 +282,14 @@
 
             <select id="size-slidesNavy" class="size-select">
                 <option value="UK3">Size: UK3</option>
+                <option value="UK4">Size: UK4</option>
+                <option value="UK5">Size: UK5</option>
                 <option value="UK6">Size: UK6</option>
                 <option value="UK7">Size: UK7</option>
                 <option value="UK8">Size: UK8</option>
                 <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
                 <option value="UK11">Size: UK11</option>
-                <option value="UK12">Size: UK12</option>
             </select>
 
             <p>Total Quantity: <span id="qty-slidesNavy">0</span></p>
@@ -272,6 +297,27 @@
 
             <button class="btn" onclick="updateItem('slidesNavy', 1)">Add Selected Size</button>
             <button class="btn btn-remove" onclick="updateItem('slidesNavy', -1)">Remove Selected Size</button>
+        </div>
+
+        <div class="card">
+            <img src="images/WhiteBlack.jpeg" alt="White & Core Black Adidas Slides" class="product-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
+            <h3>Adidas Adilette Slides (White & Core Black)</h3>
+            <p>R700.00</p>
+
+            <select id="size-slidesWhiteBlack700" class="size-select">
+                <option value="UK4">Size: UK4</option>
+                <option value="UK6">Size: UK6</option>
+                <option value="UK7">Size: UK7</option>
+                <option value="UK8">Size: UK8</option>
+                <option value="UK9">Size: UK9</option>
+                <option value="UK10">Size: UK10</option>
+            </select>
+
+            <p>Total Quantity: <span id="qty-slidesWhiteBlack700">0</span></p>
+            <div id="details-slidesWhiteBlack700" class="size-details"></div>
+
+            <button class="btn" onclick="updateItem('slidesWhiteBlack700', 1)">Add Selected Size</button>
+            <button class="btn btn-remove" onclick="updateItem('slidesWhiteBlack700', -1)">Remove Selected Size</button>
         </div>
     </div>
 
@@ -483,7 +529,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Chilly Shot's Production. All Rights Reserved.</p>
+    <p>&copy; 2026 Chilly Shot's Productions. All Rights Reserved.</p>
     <p><strong>Please note:</strong> Our products are sourced and stocked from official retailers such as <a href="https://www.adidas.co.za" target="_blank">Adidas</a> and <a href="https://superbalist.com" target="_blank">Superbalist</a>.</p>
 </footer>
 
@@ -520,7 +566,9 @@
 <script>
     let cart = { 
         slidesBlack: { "UK5": 0, "UK8": 0 }, 
-        slidesNavy: { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 }, 
+        slidesBlue: { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0, "UK12": 0 }, 
+        slidesNavy: { "UK3": 0, "UK4": 0, "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0 },
+        slidesWhiteBlack700: { "UK4": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 },
         newSlideNavyWhite: { "UK4": 0, "UK5": 0, "UK6": 0, "UK8": 0, "UK9": 0, "UK10": 0 },
         newSlideShowerBlack: { "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 },
         newSlideGrey: { "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0 },
@@ -530,7 +578,7 @@
     };
 
     function updateItem(item, change) {
-        if (['slidesBlack', 'slidesNavy', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'].includes(item)) {
+        if (['slidesBlack', 'slidesBlue', 'slidesNavy', 'slidesWhiteBlack700', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'].includes(item)) {
             let size = document.getElementById(`size-${item}`).value;
             cart[item][size] = Math.max(0, cart[item][size] + change);
             
@@ -556,11 +604,14 @@
     }
 
     function calculateTotals() {
+        // Calculate Qty for Old Slides (R700)
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
-        let slideQtyNavy = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
-        let slideQtyOld = slideQtyBlack + slideQtyNavy;
+        let slideQtyBlue = Object.values(cart.slidesBlue).reduce((a, b) => a + b, 0);
+        let slideQtyNavyR700 = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
+        let slideQtyWB700 = Object.values(cart.slidesWhiteBlack700).reduce((a, b) => a + b, 0);
+        let slideQtyOld = slideQtyBlack + slideQtyBlue + slideQtyNavyR700 + slideQtyWB700;
         
-        // Cyberd'vill
+        // Calculate Qty for New Slides (R660)
         let slideQtyNW = Object.values(cart.newSlideNavyWhite).reduce((a, b) => a + b, 0);
         let slideQtySB = Object.values(cart.newSlideShowerBlack).reduce((a, b) => a + b, 0);
         let slideQtyG = Object.values(cart.newSlideGrey).reduce((a, b) => a + b, 0);
@@ -579,7 +630,7 @@
         let perf50Left = perfume50Qty;
         let perf100Left = perfume100Qty;
 
-        // cyberd'vil
+        // Promo logic
         let promo130Qty = Math.min(slidesOldLeft, perf50Left);
         slidesOldLeft -= promo130Qty;
         perf50Left -= promo130Qty;
@@ -598,11 +649,11 @@
         let delivery = 0;
         
         if (totalSlideQty > 0 && totalPerfumeQty === 0) {
-            delivery = 35; // csp
+            delivery = 35; // chillyshots-p
         } else if (totalSlideQty === 0 && totalPerfumeQty > 0) {
-            delivery = 65; 
+            delivery = 65; // csp
         } else if (totalSlideQty > 0 && totalPerfumeQty > 0) {
-            delivery = 0; // chilly shuot's production code
+            delivery = 0; // cyberd'vil
         }
 
         let total = subtotal + delivery;
@@ -628,7 +679,10 @@
         let termsChecked = document.getElementById('terms-check').checked;
         
         let slideQtyBlack = Object.values(cart.slidesBlack).reduce((a, b) => a + b, 0);
-        let slideQtyNavy = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
+        let slideQtyBlue = Object.values(cart.slidesBlue).reduce((a, b) => a + b, 0);
+        let slideQtyNavyR700 = Object.values(cart.slidesNavy).reduce((a, b) => a + b, 0);
+        let slideQtyWB700 = Object.values(cart.slidesWhiteBlack700).reduce((a, b) => a + b, 0);
+
         let slideQtyNW = Object.values(cart.newSlideNavyWhite).reduce((a, b) => a + b, 0);
         let slideQtySB = Object.values(cart.newSlideShowerBlack).reduce((a, b) => a + b, 0);
         let slideQtyG = Object.values(cart.newSlideGrey).reduce((a, b) => a + b, 0);
@@ -637,7 +691,7 @@
         let perfume50Qty = Object.values(cart.perfumes50).reduce((a, b) => a + b, 0);
         let perfume100Qty = Object.values(cart.perfumes100).reduce((a, b) => a + b, 0);
 
-        let totalItems = slideQtyBlack + slideQtyNavy + slideQtyNW + slideQtySB + slideQtyG + slideQtyWB + perfume50Qty + perfume100Qty;
+        let totalItems = slideQtyBlack + slideQtyBlue + slideQtyNavyR700 + slideQtyWB700 + slideQtyNW + slideQtySB + slideQtyG + slideQtyWB + perfume50Qty + perfume100Qty;
 
         if (totalItems === 0) {
             alert("Your cart is empty!");
@@ -672,7 +726,10 @@
 
         let orderItems = "";
         for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderItems += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})\n`; }
+        for (let s in cart.slidesBlue) { if (cart.slidesBlue[s] > 0) orderItems += `- ${cart.slidesBlue[s]}x Adidas Adilette Slides (Blue) (Size: ${s})\n`; }
         for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderItems += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})\n`; }
+        for (let s in cart.slidesWhiteBlack700) { if (cart.slidesWhiteBlack700[s] > 0) orderItems += `- ${cart.slidesWhiteBlack700[s]}x Adidas Adilette Slides (White & Core Black) (Size: ${s})\n`; }
+
         for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderItems += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})\n`; }
         for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderItems += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})\n`; }
         for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderItems += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})\n`; }
@@ -700,7 +757,10 @@
         orderDetails += `*Order Summary:*%0A`;
         
         for (let s in cart.slidesBlack) { if (cart.slidesBlack[s] > 0) orderDetails += `- ${cart.slidesBlack[s]}x Adidas Adilette Slides (Black) (Size: ${s})%0A`; }
+        for (let s in cart.slidesBlue) { if (cart.slidesBlue[s] > 0) orderDetails += `- ${cart.slidesBlue[s]}x Adidas Adilette Slides (Blue) (Size: ${s})%0A`; }
         for (let s in cart.slidesNavy) { if (cart.slidesNavy[s] > 0) orderDetails += `- ${cart.slidesNavy[s]}x Adidas Adilette Slides (Navy) (Size: ${s})%0A`; }
+        for (let s in cart.slidesWhiteBlack700) { if (cart.slidesWhiteBlack700[s] > 0) orderDetails += `- ${cart.slidesWhiteBlack700[s]}x Adidas Adilette Slides (White & Core Black) (Size: ${s})%0A`; }
+
         for (let s in cart.newSlideNavyWhite) { if (cart.newSlideNavyWhite[s] > 0) orderDetails += `- ${cart.newSlideNavyWhite[s]}x Adilette lite - navy/white (Size: ${s})%0A`; }
         for (let s in cart.newSlideShowerBlack) { if (cart.newSlideShowerBlack[s] > 0) orderDetails += `- ${cart.newSlideShowerBlack[s]}x Adilette Shower - Black (Size: ${s})%0A`; }
         for (let s in cart.newSlideGrey) { if (cart.newSlideGrey[s] > 0) orderDetails += `- ${cart.newSlideGrey[s]}x Adilette lite - Grey (Size: ${s})%0A`; }
@@ -728,7 +788,10 @@
         document.getElementById('success-modal').style.display = 'none';
         
         cart.slidesBlack = { "UK5": 0, "UK8": 0 };
-        cart.slidesNavy = { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0, "UK12": 0 };
+        cart.slidesBlue = { "UK3": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0, "UK12": 0 };
+        cart.slidesNavy = { "UK3": 0, "UK4": 0, "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0, "UK11": 0 };
+        cart.slidesWhiteBlack700 = { "UK4": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 };
+
         cart.newSlideNavyWhite = { "UK4": 0, "UK5": 0, "UK6": 0, "UK8": 0, "UK9": 0, "UK10": 0 };
         cart.newSlideShowerBlack = { "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK10": 0 };
         cart.newSlideGrey = { "UK5": 0, "UK6": 0, "UK7": 0, "UK8": 0, "UK9": 0, "UK11": 0 };
@@ -737,7 +800,7 @@
         cart.perfumes50 = { "Dynamic Pulse": 0, "Ice Dive": 0, "Goal": 0, "Victory League": 0, "Star": 0 };
         cart.perfumes100 = { "Ice Dive": 0, "Goal": 0 };
         
-        let itemIDs = ['slidesBlack', 'slidesNavy', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'];
+        let itemIDs = ['slidesBlack', 'slidesBlue', 'slidesNavy', 'slidesWhiteBlack700', 'newSlideNavyWhite', 'newSlideShowerBlack', 'newSlideGrey', 'newSlideWhiteBlack'];
         itemIDs.forEach(id => {
             document.getElementById(`qty-${id}`).innerText = "0";
             document.getElementById(`details-${id}`).innerText = "";
